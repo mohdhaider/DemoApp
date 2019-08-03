@@ -17,4 +17,15 @@ final class DetailsViewModel: NSObject {
     }
     
     // MARK:- Helpers -
+    
+    func detailsContentUrl() -> String? {
+        do {
+            if let accessToken = try KeychainManager.shared.getAccessToken() {
+                return "\(Apis.detailsApiUrl.rawValue)?token=\(accessToken)"
+            }
+            return nil
+        } catch  {
+            return nil
+        }
+    }
 }

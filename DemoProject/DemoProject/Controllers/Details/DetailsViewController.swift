@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailsViewController: UIViewController {
 
     // MARK:- IBOutlets -
+    
+    @IBOutlet weak var webView: WKWebView!
     
     // MARK:- Variables -
     
@@ -33,5 +36,26 @@ extension DetailsViewController {
     
     private func initialSetup() {
         
+        setupWebView()
+        loadContent()
     }
+    
+    private func setupWebView() {
+        webView.navigationDelegate = self
+    }
+    
+    private func loadContent() {
+        
+        if let strUrl = viewModel.detailsContentUrl(), !strUrl.isEmpty {
+            
+            let url = URL(string: strUrl)!
+            webView.load(URLRequest(url: url))
+            webView.allowsBackForwardNavigationGestures = true
+        }
+    }
+}
+
+extension DetailsViewController: WKNavigationDelegate {
+    
+    
 }

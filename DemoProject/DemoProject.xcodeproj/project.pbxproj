@@ -264,8 +264,8 @@
 		1CE67A6D22F57AC100ADE875 /* Encodoing */ = {
 			isa = PBXGroup;
 			children = (
-				1CE67A6E22F57AC100ADE875 /* JsonParametersEncoding.swift */,
 				1CE67A6F22F57AC100ADE875 /* ParametersEncoding.swift */,
+				1CE67A6E22F57AC100ADE875 /* JsonParametersEncoding.swift */,
 				1CE67A7022F57AC100ADE875 /* UrlParametersEncoding.swift */,
 			);
 			path = Encodoing;

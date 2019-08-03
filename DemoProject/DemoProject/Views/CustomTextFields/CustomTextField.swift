@@ -43,7 +43,9 @@ class CustomTextField: UITextField {
                 layer.borderColor = UIColor.textFieldBorderColor().cgColor
                 clipsToBounds = true
                 
-                attributedPlaceholder = NSAttributedString.getAttributedString("ID", font: UIFont.systemFont(ofSize: 16, weight: .semibold), textColor: UIColor.lightGray)
+                let fontSize = font?.pointSize ?? 10
+                
+                attributedPlaceholder = NSAttributedString.getAttributedString("ID", font: UIFont.systemFont(ofSize: fontSize, weight: .semibold), textColor: UIColor.lightGray)
                 
                 leftView = leftPaddingView
                 leftViewMode = .always
@@ -54,7 +56,9 @@ class CustomTextField: UITextField {
                 layer.borderColor = UIColor.textFieldBorderColor().cgColor
                 clipsToBounds = true
                 
-                attributedPlaceholder = NSAttributedString.getAttributedString("Password", font: UIFont.systemFont(ofSize: 16, weight: .semibold), textColor: UIColor.lightGray)
+                let fontSize = font?.pointSize ?? 10
+                
+                attributedPlaceholder = NSAttributedString.getAttributedString("Password", font: UIFont.systemFont(ofSize: fontSize, weight: .semibold), textColor: UIColor.lightGray)
                 
                 leftView = leftPaddingView
                 leftViewMode = .always

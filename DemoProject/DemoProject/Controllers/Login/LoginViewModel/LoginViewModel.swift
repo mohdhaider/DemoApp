@@ -39,9 +39,9 @@ final class LoginViewModel: NSObject {
         
         networkManager.performLogin(interactor, .login(username: username, password: password)) {[weak self] (data, response, error) in
             
-            print(data as Any)
-            print(response as Any)
-            print(error as Any)
+            //print(data as Any)
+            //print(response as Any)
+            //print(error as Any)
             
             do {
                 if let dataAvail = data {
