@@ -20,13 +20,18 @@ extension UIView {
         
         guard let info = strInfo, !info.isEmpty else { return }
         
-        switch position {
-        case .top:
-            self.makeToast(info, duration: 0.3, position: .top)
-        case .middle:
-            self.makeToast(info, duration: 0.3, position: .center)
-        case .bottom:
-            self.makeToast(info, duration: 0.3, position: .bottom)
+        moveToMainThread {[weak self] in
+            
+            let duration: TimeInterval = 2.0
+            
+            switch position {
+            case .top:
+                self?.makeToast(info, duration: duration, position: .top)
+            case .middle:
+                self?.makeToast(info, duration: duration, position: .center)
+            case .bottom:
+                self?.makeToast(info, duration: duration, position: .bottom)
+            }
         }
     }
     

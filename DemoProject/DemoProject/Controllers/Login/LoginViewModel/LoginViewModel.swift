@@ -14,6 +14,10 @@ final class LoginViewModel: NSObject {
     
     var showActivityIndicator = DataObserver<Bool>(false)
     
+    var isAccessTokenGeneretd = DataObserver<Bool>(false)
+    
+    var errorInfo = DataObserver<String>("")
+    
     private let interactor: NetworkInteractor<LoginRequest> = NetworkInteractor()
     
     private let networkManager = NetworkManager()
@@ -39,26 +43,43 @@ final class LoginViewModel: NSObject {
         
         networkManager.performLogin(interactor, .login(username: username, password: password)) {[weak self] (data, response, error) in
             
-            //print(data as Any)
-            //print(response as Any)
-            //print(error as Any)
+            self?.showActivityIndicator.value = false
             
             do {
                 if let dataAvail = data {
                     let json = try JSONSerialization.jsonObject(with: dataAvail, options: .allowFragments)
                     
-                    if let jsonDict = json as? Parameters{
+                    if let jsonDict = json as? Parameters {
                         
-                        print("jsonDict = \(jsonDict)")
-                        
+                        if let accessToken:String = jsonDict["token"] as? String,
+                            !accessToken.isEmpty {
+                            
+                            print("jsonDict = \(jsonDict)")
+                            
+                            let isSaved = try self?.saveAccessToken(accessToken) ?? false
+                            
+                            self?.isAccessTokenGeneretd.value = isSaved
+                        }
+                        else if let strError = jsonDict["error"] as? String,
+                            !strError.isEmpty {
+                            self?.errorInfo.value = strError
+                        }
                     }
                 }
             } catch {
                 print("error = \(error)")
             }
-            
-            self?.showActivityIndicator.value = false
         }
+    }
+    
+    private func saveAccessToken(_ token:String) throws -> Bool {
+        
+        try KeychainManager.shared.saveAccessToken(token)
+        
+        guard let _ = try KeychainManager.shared.getAccessToken() else {
+            return false
+        }
+        return true
     }
 }
 

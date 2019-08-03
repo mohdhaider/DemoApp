@@ -53,6 +53,7 @@ extension SplashViewController {
     
     private func hideNavigationBar() {
         navigationController?.isNavigationBarHidden = true
+        navigationItem.hidesBackButton = true
     }
     
     private func showAppInitalScreen() throws {

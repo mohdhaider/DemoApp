@@ -27,14 +27,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textFieldUsername.text = "mohdhaider1187@gmail.com"
-        textFieldPassword.text = "Qwerty#654321"
         
         initialSetup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        hideNavigationBar()
     }
 }
 
@@ -44,6 +44,11 @@ extension LoginViewController {
     
     private func initialSetup() {
         dataBinding()
+    }
+    
+    private func hideNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+        navigationItem.hidesBackButton = true
     }
     
     private func dataBinding() {
@@ -56,6 +61,20 @@ extension LoginViewController {
             
             self?.moveToMainThread({
                 self?.networkRequestHandling(show)
+            })
+        }
+        
+        viewModel.isAccessTokenGeneretd.bind {[weak self] (isGenerated) in
+            
+            if isGenerated {
+                self?.showDetailsScreen()
+            }
+        }
+        
+        viewModel.errorInfo.bind {[weak self] (error) in
+        
+            self?.moveToMainThread({
+                self?.view.showInfo(infoPosition: .middle, info: error)
             })
         }
     }
@@ -80,7 +99,7 @@ extension LoginViewController {
         }
     }
     
-    func networkRequestHandling(_ isWorking:Bool) {
+    private func networkRequestHandling(_ isWorking:Bool) {
         
         if isWorking {
             view.endEditing(true)
@@ -91,6 +110,18 @@ extension LoginViewController {
             activityIndicator.stopAnimating()
             view.isUserInteractionEnabled = true
             buttonLogin.setTitle("LOGIN", for: .normal)
+        }
+    }
+    
+    private func showDetailsScreen() {
+        
+        moveToMainThread {[weak self] in
+            
+            guard let navCtrl = self?.navigationController else { return }
+            
+            let controller = DetailsViewController(nibName: "DetailsViewController", bundle: Bundle.main)
+            
+            navCtrl.pushViewController(controller, animated: true)
         }
     }
 }

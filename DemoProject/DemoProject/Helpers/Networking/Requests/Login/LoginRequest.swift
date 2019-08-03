@@ -26,15 +26,15 @@ extension LoginRequest : RequestInfo {
     var requestType: RequestFeature {
         
         let headers =  Parameters()
-        let bodyParams =  Parameters()
-        var urlParams =  Parameters()
+        var bodyParams =  Parameters()
+        let urlParams =  Parameters()
         
         switch self {
         case .login(let username, let password):
-            urlParams["email"] = username
-            urlParams["password"] = password
+            bodyParams["email"] = username
+            bodyParams["password"] = password
         }
         
-        return .requestWithParameters(encoding: .urlEncoding, urlParameters: urlParams, bodyParameters: bodyParams, headers: headers)
+        return .requestWithParameters(encoding: .jsonEncoding, urlParameters: urlParams, bodyParameters: bodyParams, headers: headers)
     }
 }

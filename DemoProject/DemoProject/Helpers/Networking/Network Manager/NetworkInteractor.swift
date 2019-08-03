@@ -23,7 +23,7 @@ class NetworkInteractor<Info: RequestInfo>: InteractorProtocol {
     func request(_ requestInfo: Info, completion completionBlock: @escaping NetworkRequestCompletion) {
         
         let session = URLSession.shared
-        var request = URLRequest(url: requestInfo.requestURL, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10)
+        var request = URLRequest(url: requestInfo.requestURL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 30)
         
         do {
             try buildRequest(&request, requestInfo: requestInfo)
@@ -48,6 +48,7 @@ class NetworkInteractor<Info: RequestInfo>: InteractorProtocol {
         default:
             break
         }
+        request.httpMethod =  requestInfo.httpType.rawValue
     }
     
     private func addHeaders(request  req: inout URLRequest, _ headers: Parameters) {
