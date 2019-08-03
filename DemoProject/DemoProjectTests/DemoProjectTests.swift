@@ -19,16 +19,38 @@ class DemoProjectTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
+    func testLogin() {
         // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        
+        var expectation: XCTestExpectation?
+        
+        let viewModel = LoginViewModel()
+        
+        viewModel.isAccessTokenGeneretd.bind { (isGenerated) in
+            if isGenerated {
+                expectation?.fulfill()
+            } else {
+                XCTFail("Unable to save access token")
+            }
+        }
+        
+        viewModel.errorInfo.bind { (error) in
+            if !error.isEmpty {
+                XCTFail("Unable to save access token")
+            }
+        }
+        
+        XCTContext.runActivity(named: "Login Api Check") { _ in
+            
+            waitForTimeout(for: 10,
+                           callback: { (exp) in
+                            expectation = exp
+                            do {
+                              try viewModel.performLoginApi(forUsername: "eve.holt@reqres.in", forPassword: "cityslicka")
+                            } catch {
+                                XCTFail(error.localizedDescription)
+                            }
+            })
         }
     }
-
 }

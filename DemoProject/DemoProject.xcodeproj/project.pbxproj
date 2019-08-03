@@ -43,6 +43,10 @@
 		1CE67AB822F5BE7900ADE875 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE67AB722F5BE7900ADE875 /* CustomTextField.swift */; };
 		1CE67ABA22F5CB6000ADE875 /* ScrollViewAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE67AB922F5CB6000ADE875 /* ScrollViewAdditions.swift */; };
 		1CE67ABC22F5CCAB00ADE875 /* AttributedStringAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE67ABB22F5CCAB00ADE875 /* AttributedStringAdditions.swift */; };
+		1CE67ABE22F61C6B00ADE875 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE67ABD22F61C6B00ADE875 /* XCTest.framework */; };
+		1CE67ABF22F61C7200ADE875 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CE67ABD22F61C6B00ADE875 /* XCTest.framework */; };
+		1CE67AC322F61CF600ADE875 /* XCTestExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE67AC122F61CA500ADE875 /* XCTestExtention.swift */; };
+		1CE67AC422F61D6000ADE875 /* XCTestExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE67AC122F61CA500ADE875 /* XCTestExtention.swift */; };
 		A401FFB1FBDA94577D8899C9 /* Pods_DemoProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE6F878552152CAA079EBB7 /* Pods_DemoProject.framework */; };
 		DC80D96AE1EDF1CFED949DC8 /* Pods_DemoProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A20161913473621F2677F0B /* Pods_DemoProjectTests.framework */; };
 		E71CE591939A9EEE2EB86E44 /* Pods_DemoProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8732F5603DD2F30599E85B /* Pods_DemoProjectUITests.framework */; };
@@ -109,6 +113,8 @@
 		1CE67AB722F5BE7900ADE875 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		1CE67AB922F5CB6000ADE875 /* ScrollViewAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewAdditions.swift; sourceTree = "<group>"; };
 		1CE67ABB22F5CCAB00ADE875 /* AttributedStringAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedStringAdditions.swift; sourceTree = "<group>"; };
+		1CE67ABD22F61C6B00ADE875 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		1CE67AC122F61CA500ADE875 /* XCTestExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtention.swift; sourceTree = "<group>"; };
 		2A20161913473621F2677F0B /* Pods_DemoProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		350A5BFE8D767E193E5164C2 /* Pods-DemoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProject.release.xcconfig"; path = "Target Support Files/Pods-DemoProject/Pods-DemoProject.release.xcconfig"; sourceTree = "<group>"; };
 		3B8732F5603DD2F30599E85B /* Pods_DemoProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CE67ABE22F61C6B00ADE875 /* XCTest.framework in Frameworks */,
 				DC80D96AE1EDF1CFED949DC8 /* Pods_DemoProjectTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CE67ABF22F61C7200ADE875 /* XCTest.framework in Frameworks */,
 				E71CE591939A9EEE2EB86E44 /* Pods_DemoProjectUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +158,7 @@
 		044F1CD7369D67AF497D03FB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CE67ABD22F61C6B00ADE875 /* XCTest.framework */,
 				5FE6F878552152CAA079EBB7 /* Pods_DemoProject.framework */,
 				2A20161913473621F2677F0B /* Pods_DemoProjectTests.framework */,
 				3B8732F5603DD2F30599E85B /* Pods_DemoProjectUITests.framework */,
@@ -161,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				1CE67A3622F5798000ADE875 /* DemoProject */,
+				1CE67AC022F61CA500ADE875 /* XCTestExtention */,
 				1CE67A4B22F5798200ADE875 /* DemoProjectTests */,
 				1CE67A5622F5798200ADE875 /* DemoProjectUITests */,
 				1CE67A3522F5798000ADE875 /* Products */,
@@ -463,6 +473,14 @@
 			path = CustomTextFields;
 			sourceTree = "<group>";
 		};
+		1CE67AC022F61CA500ADE875 /* XCTestExtention */ = {
+			isa = PBXGroup;
+			children = (
+				1CE67AC122F61CA500ADE875 /* XCTestExtention.swift */,
+			);
+			path = XCTestExtention;
+			sourceTree = "<group>";
+		};
 		34609BD937E55DBFD5B23C67 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -736,6 +754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CE67A4D22F5798200ADE875 /* DemoProjectTests.swift in Sources */,
+				1CE67AC322F61CF600ADE875 /* XCTestExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,6 +763,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CE67A5822F5798200ADE875 /* DemoProjectUITests.swift in Sources */,
+				1CE67AC422F61D6000ADE875 /* XCTestExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
