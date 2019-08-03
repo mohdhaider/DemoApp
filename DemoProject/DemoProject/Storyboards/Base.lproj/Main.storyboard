@@ -18,6 +18,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splaash Screen Informer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB2-VS-SFT">
+                                <rect key="frame" x="113" y="438" width="188" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration" label="Splash Screen"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bI-eC-DuB" customClass="CustomView" customModule="DemoProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -25,7 +32,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="PB2-VS-SFT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Er-0T-j6s"/>
                             <constraint firstItem="8bI-eC-DuB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4g8-5w-e7a"/>
+                            <constraint firstItem="PB2-VS-SFT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7js-eR-7Wd"/>
                             <constraint firstAttribute="trailing" secondItem="8bI-eC-DuB" secondAttribute="trailing" id="Pdg-za-xOz"/>
                             <constraint firstItem="8bI-eC-DuB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZVN-wc-TZl"/>
                             <constraint firstAttribute="bottom" secondItem="8bI-eC-DuB" secondAttribute="bottom" id="ewu-ij-al7"/>

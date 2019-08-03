@@ -36,6 +36,12 @@ class LoginViewController: UIViewController {
         
         hideNavigationBar()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        clearContent()
+    }
 }
 
 extension LoginViewController {
@@ -49,6 +55,11 @@ extension LoginViewController {
     private func hideNavigationBar() {
         navigationController?.isNavigationBarHidden = true
         navigationItem.hidesBackButton = true
+    }
+    
+    private func clearContent() {
+        textFieldUsername.text = nil
+        textFieldPassword.text = nil
     }
     
     private func dataBinding() {

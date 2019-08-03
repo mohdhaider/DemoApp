@@ -1,21 +1,28 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '11.0'
 
+inhibit_all_warnings!
+
+def shared_pods
+  pod 'KeychainAccess'
+end
+
 target 'DemoProject' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
-  # Pods for DemoProject
-  pod 'KeychainAccess'
-
+  
+  shared_pods
+  
+  # Pods for NYTimes
+  
   target 'DemoProjectTests' do
     inherit! :search_paths
     # Pods for testing
   end
+  
+end
 
-  target 'DemoProjectUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+target 'DemoProjectUITests' do
+  inherit! :search_paths
+  shared_pods
 end

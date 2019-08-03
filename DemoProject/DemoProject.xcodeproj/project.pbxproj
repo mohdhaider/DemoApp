@@ -48,8 +48,8 @@
 		1CE67AC322F61CF600ADE875 /* XCTestExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE67AC122F61CA500ADE875 /* XCTestExtention.swift */; };
 		1CE67AC422F61D6000ADE875 /* XCTestExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE67AC122F61CA500ADE875 /* XCTestExtention.swift */; };
 		A401FFB1FBDA94577D8899C9 /* Pods_DemoProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE6F878552152CAA079EBB7 /* Pods_DemoProject.framework */; };
+		B4BDB41D2DC1B3E9F9351A41 /* libPods-DemoProjectUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D411E445676DAFC15CF476A1 /* libPods-DemoProjectUITests.a */; };
 		DC80D96AE1EDF1CFED949DC8 /* Pods_DemoProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A20161913473621F2677F0B /* Pods_DemoProjectTests.framework */; };
-		E71CE591939A9EEE2EB86E44 /* Pods_DemoProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8732F5603DD2F30599E85B /* Pods_DemoProjectUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,11 +117,11 @@
 		1CE67AC122F61CA500ADE875 /* XCTestExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XCTestExtention.swift; sourceTree = "<group>"; };
 		2A20161913473621F2677F0B /* Pods_DemoProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		350A5BFE8D767E193E5164C2 /* Pods-DemoProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProject.release.xcconfig"; path = "Target Support Files/Pods-DemoProject/Pods-DemoProject.release.xcconfig"; sourceTree = "<group>"; };
-		3B8732F5603DD2F30599E85B /* Pods_DemoProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FE6F878552152CAA079EBB7 /* Pods_DemoProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B825BAA360AD8FEEE67BA280 /* Pods-DemoProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-DemoProjectTests/Pods-DemoProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7E0780A3B76C6CA3795C011 /* Pods-DemoProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-DemoProjectUITests/Pods-DemoProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CA4DEC8C30798529990DC5D5 /* Pods-DemoProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProjectTests.release.xcconfig"; path = "Target Support Files/Pods-DemoProjectTests/Pods-DemoProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		D411E445676DAFC15CF476A1 /* libPods-DemoProjectUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DemoProjectUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E190B6343E38DACB048FB6C4 /* Pods-DemoProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoProject.debug.xcconfig"; path = "Target Support Files/Pods-DemoProject/Pods-DemoProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,7 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CE67ABF22F61C7200ADE875 /* XCTest.framework in Frameworks */,
-				E71CE591939A9EEE2EB86E44 /* Pods_DemoProjectUITests.framework in Frameworks */,
+				B4BDB41D2DC1B3E9F9351A41 /* libPods-DemoProjectUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,7 +161,7 @@
 				1CE67ABD22F61C6B00ADE875 /* XCTest.framework */,
 				5FE6F878552152CAA079EBB7 /* Pods_DemoProject.framework */,
 				2A20161913473621F2677F0B /* Pods_DemoProjectTests.framework */,
-				3B8732F5603DD2F30599E85B /* Pods_DemoProjectUITests.framework */,
+				D411E445676DAFC15CF476A1 /* libPods-DemoProjectUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
