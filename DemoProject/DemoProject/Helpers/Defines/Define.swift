@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Apis: String {
     case loginApiUrl = "https://reqres.in/api/login"

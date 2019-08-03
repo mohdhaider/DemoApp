@@ -20,7 +20,13 @@ class SplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        appInitialSetups()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        hideNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,20 +39,50 @@ class SplashViewController: UIViewController {
             abort()
         }
     }
+}
 
-    // MARK:- Helpers -
+extension SplashViewController {
+
+    // MARK:- Private Functions -
     
-    func showAppInitalScreen() throws {
-     
+    private func appInitialSetups() {
+        
+        ToastManager.shared.applyDefaultStyle()
+        view.backgroundColor = UIColor.defaultBackgroundColor()
+    }
+    
+    private func hideNavigationBar() {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    private func showAppInitalScreen() throws {
+        
         if viewModel.canShowLoginScreen() {
-            
-        }
-        else if viewModel.canShowDetaailsScreen() {
-            
-        }
-        else {
+            showLoginScreen()
+        } else if viewModel.canShowDetailsScreen() {
+            showDetailsScreen()
+        } else {
             throw AppErrors.screenNotAvailable
         }
     }
+    
+    private func showLoginScreen() {
+        
+        guard let navCtrl = navigationController else { return }
+        
+        let controller = LoginViewController(nibName: "LoginViewController", bundle: Bundle.main)
+        
+        navCtrl.view.addTransitionAnimation()
+        navCtrl.pushViewController(controller, animated: false)
+    }
+    
+    private func showDetailsScreen() {
+        
+        guard let navCtrl = navigationController else { return }
+        
+        let controller = DetailsViewController(nibName: "DetailsViewController", bundle: Bundle.main)
+        
+        navCtrl.view.addTransitionAnimation()
+        navCtrl.pushViewController(controller, animated: false)
+    }
 }
-

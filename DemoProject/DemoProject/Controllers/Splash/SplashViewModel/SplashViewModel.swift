@@ -19,10 +19,20 @@ final class SplashViewModel: NSObject {
     // MARK:- Helpers -
     
     func canShowLoginScreen() -> Bool {
-        return false
+        do {
+            _ = try KeychainManager.shared.getAccessToken()
+            return false
+        } catch {
+            return true
+        }
     }
     
-    func canShowDetaailsScreen() -> Bool {
-        return false
+    func canShowDetailsScreen() -> Bool {
+        do {
+            _ = try KeychainManager.shared.getAccessToken()
+            return true
+        } catch {
+            return false
+        }
     }
 }

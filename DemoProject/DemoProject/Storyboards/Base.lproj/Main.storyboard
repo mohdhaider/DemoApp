@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bI-eC-DuB" customClass="CustomView" customModule="DemoProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8bI-eC-DuB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4g8-5w-e7a"/>
+                            <constraint firstAttribute="trailing" secondItem="8bI-eC-DuB" secondAttribute="trailing" id="Pdg-za-xOz"/>
+                            <constraint firstItem="8bI-eC-DuB" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ZVN-wc-TZl"/>
+                            <constraint firstAttribute="bottom" secondItem="8bI-eC-DuB" secondAttribute="bottom" id="ewu-ij-al7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Av-ES-yJa"/>
